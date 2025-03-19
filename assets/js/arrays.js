@@ -49,4 +49,18 @@ console.log(students);
 const selectedStudents = students.slice(1, 4); // ==> Si inserisco l'indice di partenza e quello di arrivo, però -1. Uno slice senza parametri prende tutti gli elementi della lista.
 console.log(selectedStudents);
 
-// .splice() - Serve a modificare l'array su cui lo si utilizza
+const clonedStudents = students.slice(); // uno slice senza nessun parametro mi fornirà un nuovo array con tutti gli elementi del primo (superficialmente)
+clonedStudents.pop();
+console.log(clonedStudents);
+console.log(students);
+
+// .splice() - Serve a modificare l'array sul quale lo si utilizza
+console.log(clonedStudents);
+// clonedStudents.splice(1, 1); // eliminiamo Dario
+clonedStudents.splice(1, 1, "Gianluca"); // eliminiamo Dario e inseriamo Gianluca al suo posto
+console.log(clonedStudents);
+
+// inserisco un elemento in terza posizione senza eliminare nessun elemento
+console.log(clonedStudents);
+clonedStudents.splice(2, 0, "Mauro", "Renato");
+console.log(clonedStudents);
